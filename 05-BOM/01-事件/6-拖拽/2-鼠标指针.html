@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				text-decoration: none;
+				color: #000;
+			}
+
+			#box1 {
+				width: 200px;
+				height: 200px;
+				background: red;
+				position: absolute;
+			}
+
+			#box2 {
+				width: 200px;
+				height: 200px;
+				background: yellow;
+				position: absolute;
+
+				left: 200px;
+				top: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box1">
+
+		</div>
+		<div id="box2">
+
+		</div>
+		<script type="text/javascript">
+			/* 
+			 拖拽box1
+				步骤1：鼠标按在元素上时，开始拖拽
+					onmousedown
+				步骤2：鼠标移动时被拖拽元素跟随鼠标移动
+					onmousemove
+				步骤3：鼠标松开时，被拖拽元素固定在当前位置 
+					onmouseup
+			 */
+			var box1 = document.getElementById("box1");
+			// 步骤1：鼠标按在元素上时，开始拖拽
+			box1.onmousedown = function(event) {
+				// 求出div的偏移量 鼠标.clentX - 元素.offsetLeft
+				// 求出div的偏移量 鼠标.clentY - 元素.offsetTop
+				event = event || window.event;
+				var oL = event.clientX - box1.offsetLeft;
+				var oT = event.clientY - box1.offsetTop;
+
+				// 步骤2：鼠标移动时被拖拽元素跟随鼠标移动
+				document.onmousemove = function(event) {
+					event = event || window.event;
+					var left = event.clientX - oL;
+					var top = event.clientY - oT;
+					box1.style.background = "#8f0";
+					box1.style.left = left + "px";
+					box1.style.top = top + "px";
+					box1.style.zIndex = "1";
+				}
+				// 步骤3：鼠标松开时，被拖拽元素固定在当前位置
+				document.onmouseup = function(event) {
+					event = event || window.event;
+					box1.style.background = "#f00";
+					document.onmousemove = null;
+
+					console.log(1);
+					document.onmouseup = null;
+				}
+			}
+		</script>
+	</body>
+</html>

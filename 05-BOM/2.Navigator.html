@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+
+		<script type="text/javascript">
+			/* 
+			BOM
+				-浏览器对象模型
+				BOM可以使我们通过JS来操作浏览器
+				在BOM中为我们提供了一组对象，用来完成对浏览器的操作
+			BOM对象
+				Window
+					-代表的是整个浏览器的窗口，同时window也是网页中的全局对象
+				Navigator
+					代表的当前浏览器的信息，通过该对象可以来识别不同的浏览器
+				Location
+					-代表当前浏览器的地址栏信息，通过Location可以获取地址栏信息，或者操作浏览器跳转页面
+				History
+					-代表浏览器的历史记录，可以通过该对象来操作浏览器的历史记录
+					由于隐私原因，该对象不能获取到具体的历史记录，只能操作浏览器向前或向后翻页而且该操作只在当次访问时有效
+				Screen
+					代表用户的屏幕的信息，通过该对象可以获取到用户的显示器的相关的信息
+
+				这些BOM对象都是作为window对象属性保存的
+					可以通过window对象来使用，也可以直接使用 
+			 */
+			// Navigator
+			// 	代表的当前浏览器的信息，通过该对象可以来识别不同的浏览器
+			// 	由于历史原因，navigator对象中的大部分属性都已经不能帮助我们识别浏览器了
+			// console.log(navigator.product);
+
+
+			// 	一般我们只会使用userAgent来判断浏览器的信息
+			// 		userAgent是一个字符串，这个字符串中含有描述浏览器信息的内容
+			// 	不同浏览器有不同的userAgent
+			// 		火狐：Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0) Gecko/20100101 Firefox/96.0
+			// 		Chrome：Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.82 Safari/537.36
+			// 		iE8：Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 10.0; WOW64; Trident/7.0; .NET4.0C; .NET4.0E; .NET CLR 2.0.50727; .NET CLR 3.0.30729; .NET CLR 3.5.30729; Tablet PC 2.0)
+			// 		iE10：Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 10.0; WOW64; Trident/7.0; .NET4.0C; .NET4.0E; .NET CLR 2.0.50727; .NET CLR 3.0.30729; .NET CLR 3.5.30729; Tablet PC 2.0)
+			// 		iE11：Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; .NET4.0C; .NET4.0E; .NET CLR 2.0.50727; .NET CLR 3.0.30729; .NET CLR 3.5.30729; Tablet PC 2.0; rv:11.0) like Gecko
+			// 			-在IE11中已经将微软和IE相关的标识都去除了，所以我们基本不能通过userAgent来判断浏览器是否为IE11了
+			console.log(navigator.userAgent);
+
+			var ua = navigator.userAgent;
+			// 判断浏览器是否为火狐%
+			if (/Firefox/i.test(ua)) {
+				console.log("此浏览器为火狐");
+			} else if (/Chrome/i.test(ua)) {
+				console.log("此浏览器为Chrome");
+			} else if (/msie/i.test(ua)) {
+				console.log("此浏览器为IE11以下版本");
+			}
+			
+			// 如果不能通过userAgent判断 还可以通过一些浏览器中特有的对象来判断浏览器的信息
+			// 比如：ActiveXObject --- IE中特有的函数 
+			
+			// 此方法在IE11中抓不住，因为被IE11做了手脚(window.ActiveXObject被取反了)，所以要使用下面的方法 
+			// console.log(!!window.ActiveXObject);
+			// if(window.ActiveXObject){
+			// 	console.log("你是IE，爷抓住你了");
+			// }else{
+			// 	console.log("不是IE，你走吧！");
+			// }
+			
+			// in检查对象中是否含有一个属性 
+			if("ActiveXObject" in window){
+				console.log("你是IE，爷抓住你了");
+			}else{
+				console.log("不是IE，你走吧！");
+			}
+		</script>
+	</body>
+</html>

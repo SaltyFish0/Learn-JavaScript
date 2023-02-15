@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var a = 123;
+			console.log(a != 0);
+			// !=(不相等) 对于不同类型的比较,也会对变量进行自动的类型转换,如果转换后相等也会返回false
+			console.log(a != "123");
+			var b = "123";
+			console.log(a == b);
+			
+			// ===( 全等)  类型不一样直接返回false，不会做类型转换
+			console.log(a === b);
+			
+			
+			// console.log();
+			// console.log(123 == "123");
+			// console.log(123 === "123");
+			
+			// !==(不全等) 和不等类似，不同的是他不会做类型转换
+			console.log();
+			console.log(1 != '1');
+			console.log(1 !== "1");
+		</script>
+	</body>
+</html>

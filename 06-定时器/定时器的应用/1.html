@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				text-decoration: none;
+				color: #000;
+				width: 100vw;
+				height: 100vh;
+				background: #999;
+
+			}
+
+			#box1 {
+				width: 100px;
+				height: 100px;
+				background: #0FF;
+				position: absolute;
+				left: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box1">
+
+		</div>
+		<!-- 点击按钮后box2向左移动 -->
+		<button type="button" id="btn02" style="position: absolute;">← 左</button>
+		<!-- 点击按钮后box1向右移动 -->
+		<button type="button" id="btn01" style="position: absolute;left: 50px;">右 →</button>
+		<div style="width: 0;height: 1000px;border: 1px solid;position: absolute;left: 100px;top: 0;"> </div>
+		<div style="width: 0;height: 1000px;border: 1px solid;position: absolute;left: 1100px;top: 0;">
+
+		</div>
+		<script type="text/javascript">
+			var box1 = document.getElementById("box1");
+			// 定义一个变量，用来保存定时器的标识
+			var timer;
+
+			var btn01 = document.getElementById("btn01");
+			btn01.onclick = function() {
+				clearInterval(timer);
+
+				timer = setInterval(function() {
+					// 获取box1原来的left值，并转换为整数类型
+					var oldValue = parseInt(getStyle(box1, "left"));
+					// console.log(oldValue);
+					// 旧值基础上增加，实现移动的效果
+					var newValue = oldValue + 20;
+					box1.style.left = newValue + "px";
+
+
+					if (newValue > 1100) {
+						newValue = 1100;
+					}
+					// 当元素移动到1100像素时，停止执行动画
+					if (newValue == 1100) {
+						clearInterval(timer);
+					}
+				}, 30)
+			};
+
+			var btn02 = document.getElementById("btn02");
+			btn02.onclick = function() {
+				clearInterval(timer);
+
+				timer = setInterval(function() {
+					// 获取box1原来的left值，并转换为整数类型
+					var oldValue = parseInt(getStyle(box1, "left"));
+					// console.log(oldValue);
+					// 旧值基础上增加，实现移动的效果
+					var newValue = oldValue - 20;
+					box1.style.left = newValue + "px";
+
+
+					if (newValue < 100) {
+						newValue = 100;
+					}
+					if (newValue == 100) {
+						clearInterval(timer);
+					}
+				}, 30)
+			}
+
+			function getStyle(obj, name) {
+				return window.getComputedStyle ? getComputedStyle(obj, null)[name] : obj.currentStyle[name];
+			};
+		</script>
+	</body>
+</html>

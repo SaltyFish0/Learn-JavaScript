@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<button type="button" onclick="XianYv()">入口</button>
+		<script type="text/javascript">
+			function XianYv(){
+				// prompt();
+				var grade = prompt("请输入小明的期末成绩");
+				if (grade > 100 ||　grade < 0 || isNaN(grade)) {
+					alert("不是合法数字，请仔细阅读说明。");
+				} else if(grade == 100){
+					console.log("宝马");
+				}else if (grade >= 80 && grade <= 99) {
+					console.log("iphone15s");
+				} else if (grade >= 60 && grade <= 79) {
+					console.log("参考书");
+				} else {
+					console.log("你真tm的笨");
+				}
+				
+				
+			}
+		</script>
+	</body>
+</html>

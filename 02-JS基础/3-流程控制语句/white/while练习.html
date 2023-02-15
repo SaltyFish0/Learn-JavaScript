@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- 假如投资的年利率为5%，试求从1000块增长到5000块，需要花费多少年 -->
+		<script type="text/javascript">
+			// 自做↓
+			// var capital = 1000;
+			// var year = 1;
+			// while(year < 34){
+			// 	capital = capital + capital*0.05;
+			// 	year++;
+			// }
+			// console.log(capital);
+
+
+
+			// 视频↓
+			// 定义一个变量，表示当前的钱数
+			var capital = 1000;
+			// 定义一个计数器
+			var count = 0;
+			while (capital < 5000) {
+				capital *= 1.05;
+				count++;
+			}
+			console.log(capital);
+			console.log("一共需要" + count + "年");
+		</script>
+	</body>
+</html>

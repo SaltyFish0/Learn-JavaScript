@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function() {
+				var body = document.getElementsByTagName("body")[0];
+				console.log(body);
+
+				// document中有一个属性body，保存的是body的引用
+				body = document.body;
+				console.log(body);
+
+				// documentElement表示html根标签
+				var html = document.documentElement;
+				console.log(html);
+
+				// all表示页面中所有元素
+				var all = document.all;
+				console.log(all.length);
+				console.log(all);
+				for (let i = 0; i < all.length; i++) {
+					// console.log(all[i]);
+				}
+				
+				// 此种方法和all作用一样
+				all = document.getElementsByTagName("*");
+				console.log(all);
+				
+				var box1 = document.getElementsByClassName("box1");
+				console.log(box1);
+			}
+		</script>
+	</head>
+	<body>
+		<div class="box1">
+			
+		</div>
+	</body>
+</html>

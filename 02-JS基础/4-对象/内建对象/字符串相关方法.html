@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/* 
+			 在底层字符串是已字符数组的形式保存的
+			 ["H","e","l"]
+			 */
+			var str = "Hello SaltyFish";
+			console.log(str[0]);
+			// length
+			// 	可以用来获取字符串的长度
+			console.log(str.length);
+
+			// charAt()
+			// 	可以返回字符串中指定位置的字符 不会改变原字符串
+			console.log(str.charAt(0));
+			// 用index获取没区别
+			console.log(str.charAt(0) === str[0]);
+
+			// charCodeAt()
+			// 	返回指定位置字符串的编码(Unicode编码) 不会改变原字符串
+			console.log();
+			console.log(str.charCodeAt(5));
+
+			// String.fromCharCode()
+			//  字符编码获取字符
+			console.log();
+			result = String.fromCharCode(5201314);
+			console.log(result);
+
+			// concat()
+			// 可以用连接两个或多个字符串 不会改变原字符串
+			console.log();
+			result = str.concat(" ", "你好,", "咸鱼");
+			console.log(result);
+
+			// indexof()
+			// 	该方法可以检索一个字符串中是否含有指定内容
+			// 		如果字符串含有该内容，则会返回第一次出现的索引
+			// 		如果没有指定内容，则返回-1
+			//  该方法还有第二个参数 为开始查找位置
+			// "Hello SaltyFish";
+			console.log();
+			result = str.indexOf("l", 7);
+			console.log(result);
+
+			// lastIndexOf()
+			// 	该方法作用和indexof()作用一样，只不过顺序为从后往前找
+			console.log();
+			result = str.lastIndexOf("l");
+			console.log(result);
+
+			// slice()
+			// 	可以从字符串中截取指定的内容 不会改变原字符串
+			// 	参数：
+			// 		第一个：开始位置索引 包括开始位置
+			// 		第二个：结束位置索引 不包括开始位置
+			// 			第二个参数可以省略，表示提取一参数到后面所有
+			// 			也可以为负数，则会从后计算
+			console.log();
+			console.log(str.slice(0, -3));
+
+			// substring
+			// 	可以截取字符串，和slice()类似
+			// 	参数：
+			// 		第一个：开始位置索引 包括开始位置
+			// 		第二个：结束位置索引 不包括开始位置
+			// 			不同的是这个方法不能接收负值作为参数，如果传递了负值则默认使用0，而且它会自动调整参数的位置，如果第二个参数小于第一个，则自动交换
+			console.log();
+			console.log(str.substring(0, 1));
+
+			// substr()
+			// 	用来截取字符串
+			//  参数:
+			// 		第一个：开始位置索引 包括开始位置
+			// 		第二个：截取长度
+			console.log(str.substr(0, str.length));
+
+			// split()
+			// 	可以将一个字符串拆分为一个数组
+			console.log();
+			abc = "abcd,efgh,ickl,mnop";
+			var result = abc.split(",");
+			xy = "qwer";
+			var result1 = xy.split("");
+			// 如果传递一个空串作为参数，则会将每个字符都拆分为数组中的一个元素
+			console.log("result1为" + result1);
+			console.log(result.length);
+			console.log(result[0]);
+
+			//str.toUpperCase()
+			// 	将字符串转换为大写，并返回(不会改变原字符串)
+			console.log();
+			console.log(str.toUpperCase());
+
+			// str.toLocaleLowerCase()
+			// 	将字符串转换为小写并返回(不会改变原字符串)
+			console.log();
+			console.log(str.toLocaleLowerCase());
+		</script>
+	</body>
+</html>

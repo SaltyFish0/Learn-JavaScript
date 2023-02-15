@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#box1 {
+				width: 200px;
+				height: 200px;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box1"></div>
+		<button type="button" id="btn01">btn01</button>
+		<button type="button" id="btn02">btn02</button>
+		<script type="text/javascript">
+			// 点击按钮后，修改box1的大小
+			var box1 = document.getElementById("box1");
+
+			var btn01 = document.getElementById("btn01");
+			btn01.onclick = function() {
+				// style
+				// 语法：元素.style.样式名 = 样式值
+				// 	我们通过style属性设置的样式都是内联样式，优先级高
+				//  但是如果在样式中写了！important，则此时样式会有最高的优先级
+				// 	此时js会无法修改该样式(优先级不如它大)
+				box1.style.width = "300px";
+				box1.style.height = "300px";
+				// 如果css样式名中含有-
+				// 	这种名称在js中是不合法的 比如background-color
+				// 	需要将这种样式名修改为驼峰命名法
+				// 	去掉-，然后将-后的字母改为大写
+				box1.style.backgroundColor = "#0ff";
+
+
+
+
+			}
+			
+			// 点击按钮2后，读取元素的样式
+			var btn02 = document.getElementById("btn02");
+			btn02.onclick = function() {
+				// 读取的也是内联样式
+				console.log(box1.style.width);
+				console.log(box1.style.height);
+				console.log(box1.style.backgroundColor);
+			}
+		</script>
+	</body>
+</html>

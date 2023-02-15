@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.box1 {
+				width: 100px;
+				height: 100px;
+				background: #ff0;
+			}
+
+			.box2 {
+				height: 200px;
+				background: #0F0;
+			}
+
+			#box2::after {
+				content: "1";
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box1"></div>
+		<br>
+		<button type="button" id="btn01">点我</button>
+
+		<script type="text/javascript">
+			var box1 = document.getElementsByClassName("box1")[0];
+			var btn01 = document.getElementById("btn01");
+			btn01.onclick = function() {
+				/* 
+				 通过style属性来修改元素的样式，每修改一次，浏览器就需要重新渲染一次页面
+					这样执行的性能是比较差的，而且这种样式我们需要我们修改多个样式时，也不太方便
+					box1.style.width = "200px";
+					box1.style.height = "200px";
+					box1.style.background = "#0ff";
+				 */
+
+
+				/* 
+				 我们希望一行代码同时修改多个样式
+				 我们可以通过修改元素的class或id属性，来间接的修改样式
+				 这样一来，我们只需要修改一次即可同时修改多个样式
+				 浏览器只需要重新渲染一次，性能比较好
+				 并且这种方法可以使表现和行为进一步分离
+				 */
+				console.log(hasClass(box1, "box2"));
+				toggleClass(box1,"box2");
+			}
+
+			// 定义一个函数，用来向一个元素中添加指定的class属性值
+			/* 
+			 参数1|obj：要添加class属性的元;
+			 参数2|cn：要添加的class值(字符串类型)
+			 */
+			function addClass(obj, cn) {
+				if (!hasClass(obj, cn)) {
+					obj.className += (" " + cn);
+				}
+			}
+
+			// 判断一个元素中是否含有指定的class属性值 有返回true，反之
+			function hasClass(obj, cn) {
+				// 创建正则表达式
+				var reg = new RegExp("\\b" + cn + "\\b");
+				return reg.test(obj.className);
+			}
+			console.log(hasClass(box1, "box2"));
+
+			// 删除一个类
+			function removeClass(obj, cn) {
+				// 创建正则表达式
+				var reg = new RegExp("\\b" + cn + "\\b");
+				// 删除
+				obj.className = obj.className.replace(reg, "")
+			}
+			// removeClass(box1, "box1");
+
+			// 切换一个类
+			// 如果元素中具有该类，则删除
+			// 如果元素中没有该类，则添加
+			// 自我理解：取反
+			function toggleClass(obj, cn) {
+				if (hasClass(obj, cn)) {
+					removeClass(obj, cn);
+				} else {
+					addClass(obj, cn);
+				}
+			}
+		</script>
+	</body>
+</html>

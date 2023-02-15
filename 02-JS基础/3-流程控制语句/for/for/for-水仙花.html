@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<a>&#9794;</a>
+		<script type="text/javascript">
+			// var ten = 0;
+			// var individual = 0;
+			// var daffodil = 0;
+			// for (; hundred <= 999, ten <= 999, individual <= 999, daffodil <= 999; hundred++, ten++, individual++, daffodil++) {
+			// 	if (Math.pow(hundred, 3) + Math.pow(ten, 3) + Math.pow(individual, 3) == daffodil) {
+			// 		console.log(daffodil);
+			// 	}
+			// }
+
+			for (var i = 100; i < 1000; i++) {
+				// 获取i的百位 十位 个位的数字
+				// 百位
+
+				// i = 101
+				// 111/10 1
+				var hundred = parseInt(i / 100);
+
+				// 111-1*100  11/10 1
+				// 十位
+				var individual = parseInt((i - hundred * 100) / 10);
+				
+				// 111%10 1
+				// 个位
+				var daffodil = i % 10;
+				if (Math.pow(hundred, 3) + Math.pow(individual, 3) + Math.pow(daffodil, 3) == i) {
+					console.log(i);
+				}
+			}
+		</script>
+	</body>
+</html>

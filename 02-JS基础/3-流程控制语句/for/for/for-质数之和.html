@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>求1到100之间所有的质数</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			for (var i=2;i<=100;i++) {
+				//假设i是质数，
+				var b=true;
+				//求证的过程，在1到i之间有没有能被整数整除的数
+				for (var j=2;j<i;j++) {
+					if(i%j==0){
+						//有数被整除了，就证明这个数不是质数
+						b=false;
+						break;
+					}
+				}
+				if(b==true){
+					document.write(i+"<br />")
+				}
+			}
+		</script>
+	</body>
+</html>

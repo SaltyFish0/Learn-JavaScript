@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+ <html>
+ 	<head>
+ 		<meta charset="utf-8">
+ 		<title></title>
+ 	</head>
+ 	<body>
+ 		<script type="text/javascript">
+ 			// 外层for控制高度
+ 			for (var i = 0; i < 5; i++) {
+ 				// 外部执行一次，内部执行五次
+ 				// 在循环的内部再创建一个循环，用来控制图形的宽度
+ 				// 内层循环可以决定图形的宽度，执行几次宽度就是多少
+				
+				// *****	j<5(5-0)	i=0
+				// ****		j<4(5-1)	i=1
+				// ***		j<3(5-2)	i=2
+				// **		j<2(5-3)	i=3
+				// *		j<1(5-4)	i=4
+				
+ 				for (var j = 0; j < 5-i ; j++) {
+ 					document.write("*")
+ 				}
+ 				document.write("</br>")
+ 			}
+ 		</script>
+ 	</body>
+ </html>

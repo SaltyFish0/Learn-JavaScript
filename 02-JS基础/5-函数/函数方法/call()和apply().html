@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- 
+		call() apply()
+		语法:	函数.call()
+		这两个方法都是函数对象的方法，需要通过函数对象来调用
+		当调用这两个函数时，都会调用函数执行
+			在调用call和appky时，可以将一个对象指定为第一个参数
+			这个对象将会成为函数执行时的this
+		call()
+			call()方法可以将实参在对象之后依次传递
+			fun.call(this,实参1,实参2...);
+		apply()
+			apply()方法需要将实参封装到一个数组中统一传递
+			fun.apply(this,[实参1,实参2...])
+		 -->
+		<script type="text/javascript">
+			var obj = {
+				name: "这是obj",
+				sayName: function() {
+					console.log(this.name);
+				}
+			};
+			// function fun(){
+			// 	this.sayName();
+			// }
+			// fun.apply(obj);
+
+			function fun(a, b) {
+				console.log(this.name);
+				console.log(a);
+				console.log(b);
+			}
+			// fun.call(obj,1,2);
+			fun.apply(obj, [3, 4]);
+		</script>
+	</body>
+</html>

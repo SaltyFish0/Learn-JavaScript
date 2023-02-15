@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#info {
+				width: 300px;
+				height: 500px;
+				background: #999;
+				overflow: scroll;
+			}
+
+			label {
+				user-select: none;
+			}
+		</style>
+	</head>
+	<body>
+		<h3>文本</h3>
+		<p id="info">
+			文本文件 播报 锁定 上传视频
+
+			本词条由“科普中国”科学百科词条编写与应用工作项目 审核 。
+			文本文件是一种计算机文件，它是一种典型的顺序文件，其文件的逻辑结构又属于流式文件。
+			特别的是，文本文件是指以ASCII码方式(也称文本方式)存储的文件，更确切地说，英文、数字等字符存储的是ASCII码，而汉字存储的是机内码。文本文件中除了存储文件有效字符信息（包括能用ASCII码字符表示的回车、换行等信息）外，不能存储其他任何信息。
+			[1]
+
+			中文名
+			文本文件
+			外文名
+			textfile
+
+			拼 音
+			wén běn wén jiàn
+			扩展名
+			txt、.doc.、.docx、.wps
+
+			目录
+
+			1 简介
+			2 格式
+			▪ ASCII
+			▪ MIME
+
+			▪ .txt
+			▪ Windows的.txt文件
+			3 数据存储
+			4 与二进制文件比较
+
+			▪ 定义
+			▪ 存取
+			▪ 优缺点
+
+			简介
+			播报
+			文本文件是一种由若干行字符构成的计算机文件。文本文件存在于计算机文件系统中。通常，通过在文本文件最后一行后放置文件结束标志来指明文件的结束。
+			文本文件是指一种容器，而纯文本是指一种内容。文本文件可以包含纯文本。
+			一般来说，计算机文件可以分为两类：文本文件和二进制文件。 [2]
+			格式
+			播报
+			ASCII
+			文件
+			文件
+			ASCII标准使得只含有ASCII字符的文本文件可以在Unix、Macintosh、Microsoft
+			Windows、DOS和其它操作系统之间自由交互，而其它格式的文件是很难做到这一点的。但是，在这些操作系统中，换行符并不相同，处理非ASCII字符的方式也不一致。
+			MIME
+			文本文件在MIME标准中的类型为“text/plain”，此外，它通常还附加编码的信息。在Mac OS X出现前，当Resource fork指定某一个文件的类型为“TEXT”时，Mac
+			OS就认为这个文件是文本文件。在Windows中，当一个文件的扩展名为“txt”时，系统就认为它是一个文本文件。此外，处于特殊的目的，有些文本文件使用其它的扩展名。例如，计算机的源代码也是文本文件，它们的后缀是用来指明它的程序语言的。
+			.txt
+			.txt是包含极少格式信息的文字文件的扩展名。.txt格式并没有明确的定义，它通常是指那些能够被系统终端或者简单的文本编辑器接受的格式。任何能读取文字的程序都能读取带有.txt扩展名的文件，因此，通常认为这种文件是通用的、跨平台的。
+			在英文文本文件中，ASCII字符集是最为常见的格式，而且在许多场合，它也是默认的格式。对于带重音符号的和其它的非ASCII字符，必须选择一种字符编码。在很多系统中，字符编码是由计算机的区域设置决定的。常见的字符编码包括支持许多欧洲语言的ISO
+			8859-1。
+			由于许多编码只能表达有限的字符，通常它们只能用于表达几种语言。Unicode制定了一种试图能够表达所有已知语言的标准，Unicode字符集非常大，它囊括了大多数已知的字符集。Unicode有多种字符编码，其中最常见的是UTF-8，这种编码能够向后兼容ASCII，相同内容的的ASCII文本文件和UTF-8文本文件完全一致。
+			Windows的.txt文件
+			微软的MS-DOS和Windows采用了相同的文本文件格式，它们都使用CR和LF两个字符作为换行符，这两个字符对应的ASCII码分别为13和10。通常，最后一行文本并不以换行符(CR-LF标志)结尾，包括记事本在内的很多文本编辑器也不在文件的最后添加换行符。
+			大多数Windows文本文件使用ANSI、OEM或者Unicode编码。Windows所指的ANSI编码通常是1字节的ISO-8859编码，不过对于像中文、日文、朝鲜文这样的环境，需要使用2字节字符集。在过渡至Unicode前，Windows一直用ANSI作为系统默认的编码。而OEM编码，也是通常所说的MS-DOS代码页，是IBM为早期IBM个人电脑的文本模式显示系统定义的。在全屏的MS-DOS程序中同时使用了图形的和按行绘制的字符。新版本的Windows可以使用UTF-16LE和UTF-8之类的Unicode编码。
+		</p>
+		<!-- "disabled" 为不可用-->
+		<label for="a1">
+			<input type="checkbox" name="" id="a1" value="" disabled="disabled" />已阅读
+		</label>
+		<input type="submit" name="" id="a2" value="注册" disabled="disabled" />
+		<script type="text/javascript">
+			/* 
+			 垂直滚动条滚动到底时，使表单项可用
+			 */
+			var info = document.getElementById("info");
+			var a1 = document.getElementById("a1");
+			var a2 = document.getElementById("a2");
+			console.log("滚动区域高度 "+info.scrollHeight);
+			console.log("滚动了 "+info.scrollTop);
+			console.log("可见高度 "+info.clientHeight);
+			info.onscroll = function() {
+				if (info.scrollHeight - info.scrollTop == info.clientHeight) {
+					console.log(a1.disabled);
+					a1.disabled = !a1.disabled;
+					a2.disabled = !a2.disabled;
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/* 函数作用域
+				调用函数时创建函数作用域，函数执行完毕以后，函数作用域销毁
+				每调用一次函数就会创建一个新的函数作用域，他们之间是互相独立的
+				函数作用域中可以访问到全局作用域的变量
+					在全局作用域中无法访问到函数作用域的变量
+				当在函数作用域操作一个变量时，如果本身作用域中就直接使用
+				没有就去上一级找,直到最顶的全局作用域，如果全局作用域中依然没有
+				那么就报错
+			 */
+			var a = "全局a";
+
+			function x() {
+				var a = "x";
+				// 在函数作用域中也有声明提前的特性，例如提前声明var，提前声明函数(跟全局一样的规则)
+				function fun(c) {
+					console.log(a);
+					console.log(window.a);
+					
+					console.log(c);
+					console.log(b);
+					var b = 20;
+				}
+				fun();
+			}
+			x();//输出为x
+		</script>
+	</body>
+</html>

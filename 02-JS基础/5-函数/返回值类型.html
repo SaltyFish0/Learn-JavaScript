@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function fun() {
+				console.log("开始");
+				for (var i = 0; i <= 5; i++) {
+					if (i == 2) {
+						// 退出当前循环
+						// break;
+
+						// 跳过当次循环
+						// continue;
+
+						// 使用return可以结束整个函数
+						return;
+					}
+					console.log(i);
+				}
+				console.log("结束");
+			}
+			fun();
+
+			console.log();
+
+			function fun1(a) {
+
+				function fun2(b) {
+					return a + "喜欢" + b;
+				}
+				// 将fun2函数对象作为返回值返回
+				return fun2;
+			}
+			
+			// 接收函数的返回值
+			var result = fun1("我")("你");
+			console.log(result);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				text-decoration: none;
+				color: #000;
+				width: 100vw;
+				height: 100vh;
+				/* background: #999; */
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+			}
+
+			#a1 {
+				width: 500px;
+				height: 300px;
+				border: 1px solid;
+			}
+
+			#a2 {
+				margin-top: 10px;
+				width: 500px;
+				height: 150px;
+				border: 1px solid;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="a1">
+
+		</div>
+		<div id="a2">
+
+		</div>
+		<script type="text/javascript">
+			/* 
+			 鼠标在a1移动时，在showMsg中显示鼠标的坐标
+			 */
+			var a1 = document.getElementById("a1");
+			var a2 = document.getElementById("a2");
+			/* 
+			 onmousemove
+				 该事件会在鼠标在元素中移动时调用
+				 
+			 事件对象
+				当事件的响应函数被触发时，浏览器每次都会将一个事件对象传递进响应函数
+				在事件对象中，封装了当前事件的一切信息 比如，鼠标的坐标，键盘哪个按键按下；鼠标滚轮滚动的方向
+				IE8中，触发响应函数时，浏览器不会传递事件对象
+				IE8及以下的浏览器中，是将事件对象作为window对象属性保存的
+			 */
+			a1.onmousemove = function(event) {
+				/* 
+				 clientX 鼠标指针水平坐标
+				 clientY 鼠标指针垂直坐标
+				 
+				 */
+
+				/* 
+				 全适应判断1
+				 */
+				// if(!event){
+				// 	var x = window.event.clientX;
+				// 	var y = window.event.clientY;
+				// 	a2.innerHTML = "x = " + x + " ； y = " + y;
+				// }
+				// var x = window.event.clientX;
+				// var y = window.event.clientY;
+				// a2.innerHTML = "x = " + x + " ； y = " + y;
+
+				/* 
+				全适应判断2
+				*/
+				console.log(event);
+				event = event || window.event;
+				var x = event.clientX;
+				var y = event.clientY;
+				a2.innerHTML = "x = " + x + " ； y = " + y;
+			}
+		</script>
+	</body>
+</html>

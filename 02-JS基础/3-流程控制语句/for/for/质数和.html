@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var count = 0;
+			for (var i = 2; i <= 100; i++) {
+				var b = true;
+				for (var j = 2; j < i; j++) {
+					if (i % j == 0) {
+						// console.log(i + "不是质数");
+						b = false;
+					}
+				}
+				if (b) {
+					console.log(i + "是质数");
+					count += i;
+				}
+			}
+			console.log("一到一百质数和为" + count);
+		</script>
+	</body>
+</html>

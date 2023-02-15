@@ -1,0 +1,90 @@
+2
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// var obj1 = {
+			// 	name: "孙悟空",
+			// 	age: 18,
+			// 	gender: "男",
+			// 	sayName: function() {
+			// 		console.log(this.name);
+			// 	}
+			// }
+			// var obj2 = {
+			// 	name: "猪八戒",
+			// 	age: 16,
+			// 	gender: "男",
+			// 	sayName: function() {
+			// 		console.log(this.name);
+			// 	}
+			// }
+			// var obj3 = {
+			// 	name: "沙和尚",
+			// 	age: 19,
+			// 	gender: "男",
+			// 	sayName: function() {
+			// 		console.log(this.name);
+			// 	}
+			// }
+			// obj1.sayName();
+			// obj2.sayName();
+			// obj3.sayName();
+			
+			// 工厂方法创建对象(批量创建)
+			// 通过该方法可以大批量的创建对象
+			// function createPerson(){
+			// 	// 创建新对象
+			// 	var obj = new Object();
+			// 	// 向对象中添加属性
+			// 	obj.name = "孙悟空";
+			// 	obj.age = 18;
+			// 	obj.gender = "男";
+			// 	obj.sayName = function(){
+			// 		console.log(this.name);
+			// 	}
+				
+			// 	// 将新对象返回
+			// 	return obj;
+			// }
+			// var obj1 = createPerson();
+			// var obj2 = createPerson();
+			// var obj3 = createPerson();
+			// console.log(obj1);
+			// console.log(obj2);
+			// console.log(obj3);
+			
+			
+			// 工厂方法创建对象(批量创建)
+			// 通过该方法可以大批量的创建对象
+			function createPerson(name,age,gender){
+				// 创建新对象
+				var obj = new Object();
+				// 向对象中添加属性
+				obj.name = name;
+				obj.age = age;
+				obj.gender = gender;
+				obj.sayName = function(){
+					console.log(this.name);
+				}
+				// 将新对象返回
+				return obj;
+			}
+			var obj1 = createPerson("孙悟空",28,"男");
+			var obj2 = createPerson("猪八戒",16,"男");
+			var obj3 = createPerson("沙和尚",19,"男");
+			
+			console.log(obj1);
+			console.log(obj2);
+			console.log(obj3);
+			
+			obj1.sayName();
+			obj2.sayName();
+			obj3.sayName();
+		</script>
+	</body>
+</html>

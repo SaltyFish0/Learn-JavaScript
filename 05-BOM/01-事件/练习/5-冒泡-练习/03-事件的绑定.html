@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			window.onload = function() {
+				var btn01 = document.getElementById("btn01");
+				// btn01.onclick = function(){
+				// 	console.log(1);
+				// }
+				// btn01.onclick = function(){
+				// 	console.log(2);
+				// }
+
+				// btn01.addEventListener("click",function(){
+				// 	console.log(1);
+				// },false)
+				// btn01.addEventListener("click",function(){
+				// 	console.log(2);
+				// },false)
+				// btn01.addEventListener("click",function(){
+				// 	console.log(3);
+				// },false)
+
+				// btn01.attachEvent("onclick",function(){
+				// 	console.log(1);
+				// });
+				// btn01.attachEvent("onclick",function(){
+				// 	console.log(2);
+				// });
+
+				// 参数：
+				// 	obj   要绑定事件的对象
+				// 	eventStr 事件的字符串 
+				// 	callback 回调函数
+				function bind(obj, eventStr, callback, flag) {
+					if (window.addEventListener) {
+						obj.addEventListener("" + eventStr, callback, flag);
+					} else {
+						obj.attachEvent("on" + eventStr, callback);
+					}
+				}
+
+				bind(btn01, "click", function() {
+					// console.log(1);
+					console.log(this);
+				}, false);
+			
+			}
+		</script>
+
+		<button type="button" id="btn01">点我一下</button>
+	</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div {
+				width: 100px;
+				height: 100px;
+				background: red;
+				position: absolute;
+				top: 8px;
+				left: 8px;
+
+			}
+		</style>
+		<script type="text/javascript">
+			//因为持续按键那么第一下和第二下有时间间隔；比如a aaaaaaaa  ,所以用定时器来做加减
+			//keyCode 值 左上右下 37--40
+			window.onload = function() {
+				var oDiv = document.getElementsByTagName('div')[0];
+				var json = {
+					'left': 'false',
+					'top': 'false',
+					'right': 'false',
+					'bottom': 'false'
+				};
+				// 判断位置 
+				document.onkeydown = function(ev) {
+					var ev = ev || event;
+					if (ev.keyCode == 37) {
+						json['left'] = true;
+					}
+					if (ev.keyCode == 38) {
+						json['top'] = true;
+					}
+					if (ev.keyCode == 39) {
+						json['right'] = true;
+					}
+					if (ev.keyCode == 40) {
+						json['bottom'] = true;
+					}
+				}
+				document.onkeyup = function() {
+					var ev = ev || event;
+					if (ev.keyCode == 37) {
+						json['left'] = false;
+					}
+					if (ev.keyCode == 38) {
+						json['top'] = false;
+					}
+					if (ev.keyCode == 39) {
+						json['right'] = false;
+					}
+					if (ev.keyCode == 40) {
+						json['bottom'] = false;
+					}
+				}
+				setInterval(function() {
+					var speed = 10;
+					
+					if (json['left'] == true) {
+						oDiv.style.left = oDiv.offsetLeft - speed + 'px';
+					}
+					if (json['top'] == true) {
+						oDiv.style.top = oDiv.offsetTop - speed + 'px';
+					}
+					if (json['right'] == true) {
+						oDiv.style.left = oDiv.offsetLeft + speed + 'px';
+					}
+					if (json['bottom'] == true) {
+						oDiv.style.top = oDiv.offsetTop + speed + 'px';
+					}
+				}, 30);
+			}
+		</script>
+	</head>
+	<body>
+		<div id="">
+
+		</div>
+	</body>
+</html>

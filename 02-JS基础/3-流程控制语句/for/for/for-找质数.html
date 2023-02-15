@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- 质数3 5 7 -->
+		<!-- 非质数9 -->
+		<!-- 判断是否为质数 -->
+		<script type="text/javascript">
+			var num = prompt("请输入数字");
+			if (num <= 1) {
+				alert("该值不合法！")
+			} else {
+				// 创建一个变量保存当前数的状态
+				// 默认当前num是质数
+				var flag = true;
+
+				// 判断num是否为质数
+				// 此处的i就为2-num之间的数
+				for (var i = 2; i < num; i++) {
+					// 判断num是否能被i整除
+					if (num % i == 0) {
+						// 如果num能被i整除，则说明num一定不是质数
+						// 不是质数的话，设置flag为false；
+						flag = false;
+						console.log(i)
+						console.log(num + "不是质数")
+					}
+				}
+
+
+				// 如果num是质数，则输出
+				if (flag) {
+					console.log(num + "是质数");
+				}
+			}
+		</script>
+	</body>
+</html>

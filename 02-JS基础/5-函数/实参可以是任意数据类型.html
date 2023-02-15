@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function sayHello0(name, age, gender, address) {
+				console.log("我是" + name + ",今年" + age + "岁了," + "我是一个" + gender + "人," + "我住在" + address + "。");
+			}
+			sayHello0("董文杰", 18, "男", "济南");
+
+			console.log();
+
+			function sayHello1(o) {
+				console.log(o);
+				console.log("我是" + o.name + ",今年" + o.age + "岁了," + "我是一个" + o.gender + "人," + "我住在" + o.address + "。");
+			}
+			// 创建一个对象
+			// 当参数过多时，我们可以将参数封装到一个对象中,然后通过对象传值
+			var obj = {
+				name: "孙悟空",
+				age: 18,
+				gender: "男",
+				address: "花果山",
+			}
+			sayHello1(obj);
+
+			console.log();
+
+			// 实参可以是个对象，也可以是一个函数
+			function sayHello2(a) {
+				// console.log("a = " + a);
+				
+				a(obj);
+			}
+			sayHello2(sayHello1);
+			// sayHello2(sayHello1(obj));
+			
+			
+			// sayHello2(sayHello1());
+			// 相当于使用函数的返回值
+			
+			// sayHello2(sayHello1);
+			// 相当于使用函数对象
+		</script>
+	</body>
+</html>

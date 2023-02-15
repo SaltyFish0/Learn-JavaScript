@@ -1,0 +1,52 @@
+2
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function createPerson(name, age, gender) {
+				// 创建新对象
+				var obj = new Object();
+				// 向对象中添加属性
+				obj.name = name;
+				obj.age = age;
+				obj.gender = gender;
+				obj.sayName = function() {
+					console.log(this.name);
+				}
+				// 将新对象返回
+				return obj;
+			}
+
+			function createDog(name, age, gender) {
+				// 创建新对象
+				var obj = new Object();
+				// 向对象中添加属性
+				obj.name = name;
+				obj.age = age;
+				obj.gender = gender;
+				obj.sayName = function() {
+					console.log("狗");
+				}
+				// 将新对象返回
+				return obj;
+			}
+			/* 
+			 使用工厂方法创建的对，使用的构造函数都是Object
+			 所以创建的对象都是Object这个类型
+			 就导致我们无法区分出多种不同类型的对象
+			 */
+			var obj1 = createPerson("孙悟空", 28, "男");
+			var dog = createDog("旺财", 18, "公 ");
+
+			console.log(obj1);
+			console.log(dog);
+
+			obj1.sayName();
+			dog.sayName();
+		</script>
+	</body>
+</html>

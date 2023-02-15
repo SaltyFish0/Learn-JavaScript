@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				text-decoration: none;
+				color: #000;
+				width: 100vw;
+				height: 100vh;
+				background: #999;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			main {
+				width: 800px;
+				height: 800px;
+				background: rgba(255, 0, 0, .4);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			#box1 {
+				width: 100px;
+				height: 100px;
+				background: #0ff;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<div id="box1">
+
+			</div>
+		</main>
+		<script type="text/javascript">
+			var box1 = document.getElementById("box1");
+			document.onkeydown = function(event) {
+				// 定义一个变量 表示移动的速度
+				var speed = 10;
+				// 用户按了ctrl以后速度变为50
+				if(event.ctrlKey){
+					var speed = 50;
+				}
+				if (event.key == "ArrowUp") {
+					if (box1.offsetTop > 86) {
+						box1.style.top = box1.offsetTop - speed + "px";
+					} else {
+						return false;
+					}
+				}
+				if (event.key == "ArrowDown") {
+					box1.style.top = box1.offsetTop + speed + "px";
+				}
+				if (event.key == "ArrowLeft") {
+					box1.style.left = box1.offsetLeft - speed + "px";
+				}
+				if (event.key == "ArrowRight") {
+					box1.style.left = box1.offsetLeft + speed + "px";
+				}
+				
+			}
+
+			function fun(event) {
+				event = event || window.event;
+				
+				event.preventDefault && event.preventDefault();
+				return false;
+			}
+			box1.onmousewheel = fun;
+			bind(box1, "DOMMouseScroll", fun);
+
+			function bind(obj, eventStr, callback) {
+				if (obj.addEventListener) {
+					obj.addEventListener(eventStr, callback, false);
+				} else {
+					obj.attachEvent("on" + eventStr, function() {
+						callback();
+						callback.call(obj);
+					})
+				}
+			}
+		</script>
+	</body>
+</html>

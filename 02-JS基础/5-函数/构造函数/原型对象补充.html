@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function MyClass() {
+
+			}
+			MyClass.prototype.name = "我是原型中的名字";
+			var mc = new MyClass();
+			console.log(mc.name);
+			// 使用in检查对象中是否含有某个属性时，如果对象中没有但原型中有 也会返回true
+			console.log("name" in mc);
+			// 可以使用hasOwnProperty()
+			// 使用该方法只有对象自身含有属性时，才会返回true
+			console.log(mc.hasOwnProperty("name"));
+			console.log(mc.__proto__.hasOwnProperty("name"));
+			console.log(mc.__proto__.__proto__);
+		</script>
+	</body>
+</html>

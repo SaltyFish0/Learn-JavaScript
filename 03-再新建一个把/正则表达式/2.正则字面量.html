@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/* 
+			 语法:var 变量 = /正则表达式/匹配模式
+				使用字面量的方式创建更加简单(只能加字符串)
+					使用构造函数创建更加灵活(可以加变量)
+			 */
+			var reg = /a/i;
+			console.log(reg.test("A"));
+			
+			// 创建一个正则表达式，检查一个字符串中是否含有a或b
+			// 使用|表示或者的意思
+			reg = /a|b/;
+			console.log(reg.test("ac"));
+			
+			// 创建一个正则表达式，检查一个字符串中是否含有字母
+			// []里的内容也是或的关系
+			// [a-z]表示任意小写字母
+			// [A-Z]表示任意大写字母
+			// [A-z]表示任意字母(忽略大小写)
+			// [0-9]表示任意数字
+			// [^ ] ^表示除了
+			// [ab] == a|b;
+			reg = /[a-z]/i;
+			console.log(reg.test("A"));
+			
+			// 检查一个字符串中是否含有abc 或 adc 或 aec
+			reg = /a[bde]c/;
+			console.log(reg.test("abc"));
+			
+			// [^ ] ^表示除了
+			reg = /[^ab]/;
+			console.log(reg.test("abc"));
+			
+			// 不能有数字
+			reg = /[^0-9]/;
+			console.log(reg.test("910"));
+		</script>
+	</body>
+</html>

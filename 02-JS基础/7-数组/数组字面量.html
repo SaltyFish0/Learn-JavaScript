@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// 字面量创建数组
+			// 语法:[]
+			// 数组元素可以是任意数据类型
+			// 包括对象和函数；数组；数组中放数组称为二维数组 
+			var arr = ["hello",1,true,null,undefined];
+			var obj = {name:"孙悟空"}
+			arr[arr.length] = obj;
+			arr = [{name:"孙悟空"},{name:"猪八戒"},{name:"沙和尚"}]
+			arr = [function(){console.log(0);},function(){console.log(1);}]
+			arr[0]();
+		</script>
+	</body>
+</html>

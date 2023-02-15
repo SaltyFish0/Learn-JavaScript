@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var a = [];
+			for (let i = 0; i < 10; i++) {
+				a.push(Math.ceil(Math.random() * 10));
+			}
+			console.log("排序前数组" + a);
+			a.sort(function(a, b) {
+				// 升序排列
+				return a - b;
+			});
+			console.log("排序后数组" + a);
+		</script>
+	</body>
+</html>

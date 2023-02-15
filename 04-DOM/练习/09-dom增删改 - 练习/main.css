@@ -1,0 +1,64 @@
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+main {
+	width: 800px;
+	height: 300px;
+	display: flex;
+}
+
+main .total {
+	flex: 1;
+	/* background: #0000FF; */
+	display: flex;
+	border: 1px solid;
+	justify-content: center;
+}
+
+main .total p {
+	margin-left: 4px;
+	margin-top: 60px;
+}
+
+main .total #city {
+	display: flex;
+	margin-top: 40px;
+}
+
+main .total #city li {
+	width: 80px;
+	height: 40px;
+	background: #91ef9b;
+	text-align: center;
+	line-height: 40px;
+	margin: 4px;
+	border: 1px solid;
+}
+
+main .btnList {
+	flex: 1;
+	/* background: #00FF00; */
+	display: flex;
+	flex-direction: column;
+}
+
+main .btnList div {
+	flex: 1;
+
+}
+
+main .btnList div button {
+	width: 100%;
+	height: 100%;
+}

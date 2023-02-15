@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				opacity: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function xy1() {
+				var a = 1;
+				// console.log("初始值 → " + a);
+				// a++;
+				// 变量自增以后，原变量的值会立即自增
+				// 自增分为两种：后++和前++
+				// a++;
+				// console.log("a++ → " + a);
+				// ++a;
+				// console.log("++a → " + a);
+				for (let i = 0; i < 3; i++) {
+					// a++;
+					console.log("循环后 → " + a++);
+				}
+				// console.log("循环后 → " + a++);
+
+			}
+
+			function xy2() {
+				var a = 1;
+				// console.log(a++);
+				console.log(++a);
+			}
+
+			function xy3() {
+				var a = 10;
+				// 第一次c++，是在10的基础上自增
+				a++;
+				// 第二次c++，是在11的基础上自增
+				console.log(a++);
+			}
+
+			function xy4() {
+				/* 
+				var a = 20;
+				1.a:21;
+				2.a:22
+				3.a:22
+				
+				 1.a++	b = 20 (20 a++,因为a++的值等于原变量的值，所以此步不变)
+				 2.++a	b = 42 (20 + 22 a的值已变为21，再执行++a，变为22)
+				 3.+a	b = 64(42+22)
+				 
+				var b = a++ + ++a + a;
+				console.log(b);
+				console.log(a);
+				*/
+
+				var a = 10;
+
+				b = --a + a-- + a;
+				/*
+				1. a:9
+				2. a:8
+				
+				1.b:9	(--a，立即生效 所以为9)
+				2.b:18	(a--，先	赋值再自减，所以此步不生效  9+9)
+				3.b:26	(+a，上一步执行完a--，所以这里a为8 18+8)
+				*/
+
+				console.log(b);
+			}
+			(function xy5() {
+				var n1 = 10,
+					n2 = 20;
+				var n = n1++;
+				console.log("n=" + n); //10 n=10
+				console.log("n1=" + n1); //11 n1=11
+				n = ++n1;
+				console.log("n=" + n); //12 n=12
+				console.log("n1=" + n1); //12 n1=12
+				n = n2--;
+				console.log("n=" + n);//20 n=20
+				console.log("n2=" + n2); //19 n2=19;
+				n = --n2;
+				console.log("n=" + n); //18
+				console.log("n2=" + n2); //18
+			})()
+
+
+
+
+			/*
+			
+			*/
+		</script>
+
+	</body>
+</html>

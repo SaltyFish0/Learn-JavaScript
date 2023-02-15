@@ -1,0 +1,26 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	color: #000;
+}
+body{
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+main{
+	
+}
+main table{
+	
+}
+main .formDiv{
+	margin-top: 30px;
+	border: 1px solid;
+	display: grid;
+	place-items:center center;
+}

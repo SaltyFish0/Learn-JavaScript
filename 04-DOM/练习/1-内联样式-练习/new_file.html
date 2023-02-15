@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#box1 {
+				width: 200px;
+				height: 200px;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box1"></div>
+		<button type="button" id="btn01">btn01</button>
+		<button type="button" id="btn02">btn02</button>
+		<script type="text/javascript">
+			// 点击按钮后，修改box1的大小
+			var box1 = document.getElementById("box1");
+
+			var btn01 = document.getElementById("btn01");
+			btn01.onclick = function() {
+				box1.style.width = "300px";
+				box1.style.height = "300px";
+				box1.style.backgroundColor = "#0ff";
+			}
+
+			// 点击按钮2后，读取元素的样式
+			var btn02 = document.getElementById("btn02");
+			btn02.onclick = function() {
+				console.log(box1.style.width);
+				console.log(box1.style.height);
+				console.log(box1.style.backgroundColor);
+			}
+		</script>
+	</body>
+</html>

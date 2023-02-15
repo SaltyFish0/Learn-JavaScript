@@ -1,0 +1,21 @@
+body{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	color:#000;
+	width: 100vw;
+	height: 100vh;
+	background: #999;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+main{
+	width: 800px;
+	height: 600px;
+	background: #0ff;
+}
+main img{
+	width: 100%;
+}

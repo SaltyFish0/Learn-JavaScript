@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			window.onload = function() {
+				/* 
+				 getElementsByClassName
+					根据class属性值获取一组元素节点对象
+						该方法不支持IE8及以下版本
+				 */
+				// var box1 = document.getElementsByClassName("box1");
+				// console.log(box1);
+				// console.log(box1.length);
+
+
+				// 获取页面中所有div
+				var divs = document.getElementsByTagName("div");
+				console.log(divs.length);
+				
+				console.log();
+				// 获取box1中所有div
+				// document.querySelector();
+				// 	需要一个选择器的字符串作为参数 可以根据一个css选择器来查询一个元素节点对象|IE8及以上支持
+				// 满足条件的有多个时，它只会返回第一个
+				var div = document.querySelector(".box1 div");
+				console.log(div);
+				console.log(div.innerText);
+				console.log("querySelector长度为" + div.length);
+				var div1 = document.querySelector(".box1");
+				console.log(div1.innerText);
+
+				console.log();
+				// querySelectorAll	
+				//  该方法和querySelector作用及用法一样
+				// 		不同的是它会将复合条件的元素封装到一个数组中返回(即使符合条件的只有一个，也会返回到数组)
+				var div2 = document.querySelectorAll(".box1");
+				console.log("querySelectorAll长度为" + div2.length);
+				console.log(div2[1].innerText);
+			}
+		</script>
+		<div class="box1">
+			<div>我是第一个box1中的div</div>
+		</div>
+		<div class="box1">
+			<div>我是第二个box1中的div</div>
+		</div>
+		<div class="box1">
+			<div>我是第三个box1中的div</div>
+		</div>
+		<div></div>
+	</body>
+</html>

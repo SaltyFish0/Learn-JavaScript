@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- 
+		 浏览器在加载一个页面时，是按照自上而下加载的
+			读取到一行就运行一行，如果script标签写到页面的上边
+			在读取代码时，页面还没加载
+		将js代码编写到页面下部，就是为了可以在页面加载完成后再运行js代码
+		 -->
+		<button type="button" id="btn">点我一下</button>
+		<script type="text/javascript">
+			// var btn = document.getElementById("btn");
+			// btn.onclick = function(){
+			// 	console.log("w");
+			// }
+
+			// onload事件会在整个页面加载完成后触发
+			// 为windo绑定一个onload事件
+			window.onload = function() {
+				alert("1");
+			}
+		</script>
+	</body>
+</html>

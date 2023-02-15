@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				width: 100vw;
+				height: 100vh;
+				background: #000;
+			}
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+			 运算符也称为操作符
+				比如typeof就是运算符，可以来获得一个值的类型
+				他会将该值的类型以字符串的方式返回
+					typeof返回值是字符串
+			 */
+
+			var a = 123;
+
+			var result = typeof a;
+			console.log(result);
+			console.log(typeof a);
+
+			/*
+			算法运算符
+				当对非Number类型的值进行运算时，会将这些值转换为Number(字符串除外)
+					任何值和NaN做运算都得NaN
+				+
+					+ 两个字符串相加，会合并字符串
+					 任何的值和字符串做加法，都会转换为字符串。
+			 */
+			console.log(true + true);
+			console.log(1 + NaN);
+
+			var sf = "锄禾日当午," +
+				"汗滴禾下土。" +
+				"谁知盘中餐," +
+				"粒粒皆辛苦。"
+
+			console.log(sf);
+
+			console.log()
+			// 因为任何的值和字符串做加法，都会转换为字符串。
+			// 所以我们可以利用这一特点,来将任意的数据类型转换为String
+			// 这是一种隐式的类型转换，由浏览器自动完成，实际上他也是调用String()方法
+			var c = 123;
+			console.log(typeof c)
+			c = c + "";
+			console.log(typeof c)
+
+			console.log()
+			// 任何值做减法运算时，都会自动转换为number
+			// 所以我们可以利用这一特点,来将任意的数据类型转换为Number
+			// 	-0 *1 /1
+			var d = "123";
+			console.log(typeof d)
+			d = d - 0;
+			console.log(typeof d)
+		</script>
+	</body>
+</html>

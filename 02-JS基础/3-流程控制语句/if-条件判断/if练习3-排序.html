@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var number1 = +prompt("整数1");
+			var number2 = +prompt("整数2");
+			var number3 = +prompt("整数3");
+			alert(number1 + "," + +number2);
+			if (number1 == number2 || number2 == number3 || number3 == number1) {
+				console.log("程序不支持相等数运算");
+			} else if (number1 < number2 && number1 < number3) {
+				// num1最小
+				if (number2 < number3) {
+					console.log("number1最小" + number1 + "," + number2 + "," + number3);
+				} else {
+					console.log("number1最小" + number1 + "," + number3 + "," + number2);
+				}
+			} else if (number2 < number1 && number2 < number3) {
+				// num2最小
+				if (number1 < number3) {
+					console.log("number2最小" + number2 + "," + number1 + "," + number3);
+				} else {
+					console.log("number2最小" + number2 + "," + number3 + "," + number1);
+				}
+			} else {
+				// num3最小
+				// console.log("num3最小");
+				console.log("number3最小" + number3 + "," + number2 + "," + number1);
+			}
+		</script>
+	</body>
+</html>

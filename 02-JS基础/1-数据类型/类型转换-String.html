@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				width: 100vw;
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			div{
+				width: 100px;
+				height: 100px;
+				background: transparent;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<script type="text/javascript">
+			const xy = 123;
+			console.log(xy);
+			console.log(typeof xy);
+			
+			
+			console.log(xy.toString());
+			console.log(typeof xy.toString());
+			
+			console.log( );
+			// toString方法转换
+			// 不可转换null Object undefined
+			const xy1 = xy.toString();
+			console.log(xy1);
+			console.log(typeof xy1);
+			
+			console.log( );
+			
+			var sf = 123;
+			// String()函数转换 不可转换 Object 
+			sf = String(sf);
+			console.log(typeof sf);
+			
+			console.log( );
+			
+			var sf1 = Object;
+			sf1= String(sf1);
+			console.log(sf1);
+			console.log(typeof sf1);
+		</script>
+		
+		<!-- number -->
+		<!-- string -->
+		
+	</body>
+</html>
